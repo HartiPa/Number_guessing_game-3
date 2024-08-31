@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number_guessing_game-3</title>
+</head>
+<body>
+    <h1>PC tipuje: {{ guess }}</h1>
+    <p>Zbývající pokusy: {{ attempts }}</p>
+    <form action="/guess" method="post">
+        <!-- Skryté pole pro předání hodnot -->
+        <input type="hidden" name="min_val" value="{{ min_val }}">
+        <input type="hidden" name="max_val" value="{{ max_val }}">
+        <input type="hidden" name="attempts" value="{{ attempts }}">
+        <input type="hidden" name="guess" value="{{ guess }}">
+
+        <button type="submit" name="response" value="higher">Vyšší</button>
+        <button type="submit" name="response" value="lower">Nižší</button>
+        <button type="submit" name="response" value="correct">Správně</button>
+    </form>
+</body>
+</html>
